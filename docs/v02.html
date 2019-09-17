@@ -1,0 +1,67 @@
+<html>
+
+  <head>
+    <title>Version 2</title>
+      
+    <!--End typing CSS -->
+    <style>
+        button.button{
+            background-color:#bc3030;
+            text-align: center;
+            font-family: serif;
+            font-size: 20px;
+            border-color: #d89797;
+            color:#ffffff;
+            margin-bottom:3px;
+        }    
+        button.button:hover{
+            background-color:#ffc9c9;
+            color:#000000;
+        }
+        div#boxbuttons{
+            background: #d11c1c;
+            width: 88px;
+            position:relative;
+            padding: 10px;
+            align-content: center;
+            border-style: outset;
+        }
+    </style>
+    <!--End typing CSS -->
+      
+    <!--Start typing JavaScript -->
+    <script>
+       
+    </script>
+    <!--End typing JavaScript -->
+  </head>    
+
+  <body>
+      <h3>Hello Universe. This is my 7-Segment Display Driver</h3>
+      <h4>Keypad Input</h4>
+      <input type="number" id="insert" placeholder="Enter Number">
+      <!--Caculator begin-->
+      <div id="boxbuttons">
+
+          <button type="button" class="button" onclick='document.getElementById("insert").innerHTML="1"'>1</button> 
+          <button type="button" class="button" onclick='document.getElementById("insert").innerHTML="2"'>2</button> 
+          <button type="button" class="button" onclick='document.getElementById("insert").innerHTML="3"'>3</button><br\>
+    
+          <button type="button" class="button" onclick='document.getElementById("insert").innerHTML="4"'>4</button>
+          <button type="button" class="button" onclick='document.getElementById("insert").innerHTML="5"'>5</button> 
+          <button type="button" class="button" onclick='document.getElementById("insert").innerHTML="6"'>6</button><br\>
+          
+          <button type="button" class="button" onclick='document.getElementById("insert").innerHTML="7"'>7</button> 
+          <button type="button" class="button" onclick='document.getElementById("insert").innerHTML="8"'>8</button>
+          <button type="button" class="button" onclick='document.getElementById("insert").innerHTML="9"'>9</button><br\>
+          
+        <!--create the div for 0, make it stay in the center-->
+          <div align="center"><button type="button" class="button" onclick='document.getElementById("insert").innerHTML="0"'>0</button></div>
+      </div>
+      <!--Caculator end-->
+      
+      <h4>Convert Decimal to Binary</h4>
+      <h4>Convert Binary to Segments to Illuminate</h4>
+      <h4>Illuminate Segment</h4>
+  </body>
+</html>
