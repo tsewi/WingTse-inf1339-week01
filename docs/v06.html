@@ -27,22 +27,69 @@
                 background-color:#ffc9c9;
                 color:#000000;}
             
+            div#boxbuttons{
+            background: #d11c1c;
+            width: 88px;
+            position:relative;
+            padding: 10px;
+            align-content: center;
+            border-style: outset;}
+            
         </style>
         <script>
             function display(number){
                 //for now just display the number in a <p> element
                 document.getElementById("decimal_input").innerHTML=number
+                var bcd = dec2bin(number)
+                document.getElementById("binary_output").innerHTML=bcd
+            }
+            
+            function dec2bin(decimal){
+                //substitute a non-algorithmic solution
+                //for the short term(we'll replace it later)
+                var binary_numbers= ['0000','0001','0010','0011','0100','0101','0110','0111','1000','1001']
+                return(binary_numbers[decimal])
+            }
+            
+            function dec2bin2(decimal){
+                var quotient = decimal
+                var output =''
+                while (quotient>0){
+                    // the % operator is "divide and repoet reminder"
+                    remainder =quotient % 2
+                    if(remainder == 1)
+                        {output = '1'+ output}
+                    else
+                        {output= '0'+ output}
+                    // Math is a set of tools for doing math.
+                    // We access them like functions. Ther names are 
+                    // always Math.something
+                    quotient= Math.floor(quotient/2)
+                    
+                    // The above algorithm leaves off the leading zeros 
+                    // and fails completerly on converting 0 base 10. To
+                    // fix this we can "pad" the output with leading zeros
+                    // We will use a while loop (since we don't want any
+                    // padding if the output is already four digits) and
+                    // a "method" we can add to any character string variable
+                    // called length - it just reports the length of the
+                    // string
+                    while (output.length< 4) {output= '0'+ output}
+                    return (output)
+
+                }
             }
         </script>
     </head>
     
     <body>
-        <h2>Version 5 Adding Input Keypad</h2>
+        <h2>Version 6 Adding Decimal to Binary Conversion</h2>
         <table class="standardTable">
         <tr>
             <td class="blackbox">
                 <!--Keypad start-->
                 <h3>Keypad</h3>
+                <div id="boxbuttons">
                   <button type="button" class="button" onclick="display(1)" >1</button> 
                   <button type="button" class="button" onclick="display(2)">2</button> 
                   <button type="button" class="button" onclick="display(3)">3</button><br\>
@@ -56,10 +103,12 @@
                   <button type="button" class="button" onclick="display(9)">9</button><br\>
                  <!--create the div for 0, make it stay in the center-->
                 <button type="button" class="button" align="center" onclick="display(0)">0</button>
+                </div>
                 <!--Keypad end-->
             </td>
                     <td class="blackbox"> <h3>Decimal to Binary</h3>
                         <p id="decimal_input">???</p>
+                        <p id="binary_output">???</p>
                     </td>
             <td class="blackbox"> Binary to SSD Signals</td>
             <td class="blackbox"> Illuminate Segments</td>
