@@ -5,6 +5,7 @@
                 border: solid;
                 border-collapse: collapse;}
             
+            /*This is the black box for the four sections*/
             .blackbox{
                 border:solid;
                 height:100px;
@@ -27,6 +28,7 @@
                 background-color:#ffc9c9;
                 color:#000000;}
             
+            /*This is the box for the butotn- Red box*/
             div#boxbuttons{
             background: #d11c1c;
             width: 88px;
@@ -43,6 +45,17 @@
                 var bcd = dec2bin(number)
                 document.getElementById("binary_output").innerHTML=bcd
             }
+            
+            
+        //send binary number to function bin2ssd()
+                document.getElementById("bin2ssd_input").innerHTML=bcd
+                var ssd = bin2ssd(bcd)
+                document.getElementById("bin2ssd_output").innerHTML=bcd
+            
+        //send ssd signal to function illuminate_segments()
+                document.getElementById("illuminate_input").innerHTML=bcd
+                illuminate(ssd)
+                document.getElementById("illuminate_output").innerHTML='done'
             
             function dec2bin(decimal){
                 //substitute a non-algorithmic solution
@@ -83,7 +96,7 @@
     </head>
     
     <body>
-        <h2>Version 6 Adding Decimal to Binary Conversion</h2>
+        <h2>Version 7 Stubs for Parts 3 and 4</h2>
         <table class="standardTable">
         <tr>
             <td class="blackbox">
@@ -109,13 +122,24 @@
             
             <!--Start Decimal to Binary-->
             <td class="blackbox"> <h3>Decimal to Binary</h3>
-                        <p id="decimal_input">???</p>
-                        <p id="binary_output">???</p>
-                    </td>
-             <!--End Decimal to Binary-->
+                <p id="decimal_input">???</p>
+                <p id="binary_output">???</p>
+            </td>
+            <!--End Decimal to Binary-->
             
-            <td class="blackbox"> Binary to SSD Signals</td>
-            <td class="blackbox"> Illuminate Segments</td>
+            <!--Start Binary to SSD Signals-->
+            <td class="blackbox"> <h3>Binary to SSD Signals</h3>
+                <p id="binary2ssd_input"></p>
+                <p id="binary2ssd_output"></p>
+            </td>
+            <!--End Decimal to Binary-->
+            
+            <!--Start Illuminate Segments-->
+            <td class="blackbox"> <h3>Illuminate Segments</h3>
+                <p id="illuminate_input"></p>
+                <p id="illuminate_output"></p>
+            </td>
+            <!--End Decimal to Binary-->
         </tr>
         </table>
     </body>
